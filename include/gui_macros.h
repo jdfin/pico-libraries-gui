@@ -44,7 +44,7 @@
 
 // Button with two images: one for enabled/disabled, and one for pressed
 
-#define BUTTON_1(NAME, TXT, FB, COL, ROW, WID, HGT, BRD, FNT, FG, BG, UP_BG, \
+#define BUTTON_2(NAME, TXT, FB, COL, ROW, WID, HGT, BRD, FNT, FG, BG, UP_BG, \
                  DN_BG, CK_CB, CK_ARG, DN_CB, DN_ARG, UP_CB, UP_ARG, MODE,   \
                  PRESSED)                                                    \
                                                                              \
@@ -61,4 +61,29 @@
                                 CK_CB, CK_ARG,          /* on_click */       \
                                 DN_CB, DN_ARG,          /* on_down */        \
                                 UP_CB, UP_ARG,          /* on_up */          \
+                                MODE, PRESSED)
+
+
+// Button with three images: enabled, disabled, and pressed
+
+#define BUTTON_3(NAME, TXT, FB, COL, ROW, WID, HGT, BRD, FNT, FG, BG,        \
+                 ENA_BG, DIS_BG, DN_BG, CK_CB, CK_ARG, DN_CB, DN_ARG, UP_CB, \
+                 UP_ARG, MODE, PRESSED)                                      \
+                                                                             \
+    static constexpr PixelImage<Pixel565, WID, HGT> NAME##_btn_ena_img =     \
+        label_img<Pixel565, WID, HGT>(TXT, FNT, FG, BRD, FG, ENA_BG);        \
+                                                                             \
+    static constexpr PixelImage<Pixel565, WID, HGT> NAME##_btn_dis_img =     \
+        label_img<Pixel565, WID, HGT>(TXT, FNT, FG, BRD, FG, DIS_BG);        \
+                                                                             \
+    static constexpr PixelImage<Pixel565, WID, HGT> NAME##_btn_dn_img =      \
+        label_img<Pixel565, WID, HGT>(TXT, FNT, FG, BRD, FG, DN_BG);         \
+                                                                             \
+    static GuiButton NAME##_btn(FB, COL, ROW, BG,                            \
+                                &NAME##_btn_ena_img.hdr, /* enabled */       \
+                                &NAME##_btn_dis_img.hdr, /* disabled */      \
+                                &NAME##_btn_dn_img.hdr,  /* pressed */       \
+                                CK_CB, CK_ARG,           /* on_click */      \
+                                DN_CB, DN_ARG,           /* on_down */       \
+                                UP_CB, UP_ARG,           /* on_up */         \
                                 MODE, PRESSED)

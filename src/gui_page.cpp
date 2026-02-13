@@ -10,11 +10,14 @@
 
 
 GuiPage::GuiPage(std::initializer_list<GuiWidget *> widgets,
+                 void (*on_init)(intptr_t), intptr_t on_init_arg,
                  void (*on_update)(intptr_t), intptr_t on_update_arg) :
     _widgets{},
     _widget_cnt(0),
     _visible(false),
     _busy(0),
+    _on_init(on_init),
+    _on_init_arg(on_init_arg),
     _on_update(on_update),
     _on_update_arg(on_update_arg)
 {

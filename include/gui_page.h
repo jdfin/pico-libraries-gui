@@ -16,6 +16,7 @@ class GuiPage
 public:
 
     GuiPage(std::initializer_list<GuiWidget *> widgets,
+            void (*on_init)(intptr_t) = nullptr, intptr_t on_init_arg = 0,
             void (*on_update)(intptr_t) = nullptr, intptr_t on_update_arg = 0);
 
     void visible(bool v);
@@ -37,6 +38,13 @@ public:
     // System calls this to see if anything on the page wants to claim event
     bool event(Touchscreen::Event &event);
 
+    // System calls this to see if the page wants to initialize itself
+    void init()
+    {
+        if (_on_init != nullptr)
+            _on_init(_on_init_arg);
+    }
+
     // System calls this to see if the page wants to update itself
     void update()
     {
@@ -51,6 +59,8 @@ private:
     unsigned _widget_cnt;
     bool _visible;
     int _busy;
+    void (*_on_init)(intptr_t);
+    intptr_t _on_init_arg;
     void (*_on_update)(intptr_t);
     intptr_t _on_update_arg;
 };

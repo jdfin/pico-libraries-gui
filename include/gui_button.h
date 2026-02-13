@@ -85,6 +85,8 @@ public:
             _fb.write(_col, _row,
                       _enabled ? (_pressed ? _img_pressed : _img_enabled)
                                : _img_disabled);
+        else
+            _fb.fill_rect(_col, _row, _wid, _hgt, _bg);
     }
 
     // System calls this to see if button wants to claim event

@@ -28,7 +28,15 @@ public:
 
     void visible(bool v)
     {
+        // if changing from visible to not visible, erase it
+        if (_visible && !v)
+            erase();
+
+        // if changing from not visible to visible, draw it
+        bool was_visible = _visible;
         _visible = v;
+        if (!was_visible && _visible)
+            draw();
     }
 
     bool visible() const
