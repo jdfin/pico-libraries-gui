@@ -1,10 +1,10 @@
 #pragma once
 
 // framebuffer
-#include "color.h"
-#include "framebuffer.h"
+#include "framebuffer/color.h"
+#include "framebuffer/framebuffer.h"
 // touchscreen
-#include "touchscreen.h"
+#include "touchscreen/touchscreen.h"
 
 
 class GuiWidget

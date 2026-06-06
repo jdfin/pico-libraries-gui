@@ -5,8 +5,8 @@
 // pico
 #include "pico/stdlib.h"
 // gui
-#include "gui_page.h"
-#include "gui_widget.h"
+#include "gui/gui_page.h"
+#include "gui/gui_widget.h"
 
 
 GuiPage::GuiPage(std::initializer_list<GuiWidget *> widgets,

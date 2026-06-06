@@ -6,9 +6,9 @@
 // pico
 #include "pico/stdlib.h"
 // touchscreen
-#include "touchscreen.h"
+#include "touchscreen/touchscreen.h"
 // gui
-#include "gui_widget.h"
+#include "gui/gui_widget.h"
 
 
 class GuiPage

@@ -4,11 +4,11 @@
 // pico
 #include "pico/stdlib.h"
 // framebuffer
-#include "color.h"
-#include "framebuffer.h"
-#include "pixel_image.h"
+#include "framebuffer/color.h"
+#include "framebuffer/framebuffer.h"
+#include "framebuffer/pixel_image.h"
 // gui
-#include "gui_widget.h"
+#include "gui/gui_widget.h"
 
 
 // A label can be:

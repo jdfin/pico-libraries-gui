@@ -3,12 +3,12 @@
 // pico
 #include "pico/stdlib.h"
 // framebuffer
-#include "framebuffer.h"
+#include "framebuffer/framebuffer.h"
 // touchscreen
-#include "touchscreen.h"
+#include "touchscreen/touchscreen.h"
 // gui
-#include "gui_button.h"
-#include "gui_widget.h"
+#include "gui/gui_button.h"
+#include "gui/gui_widget.h"
 
 using Event = Touchscreen::Event;
 

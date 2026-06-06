@@ -4,12 +4,12 @@
 // pico
 #include "pico/stdlib.h"
 // framebuffer
-#include "framebuffer.h"
-#include "pixel_image.h"
+#include "framebuffer/framebuffer.h"
+#include "framebuffer/pixel_image.h"
 // touchscreen
-#include "touchscreen.h"
+#include "touchscreen/touchscreen.h"
 // gui
-#include "gui_label.h"
+#include "gui/gui_label.h"
 
 
 // A button is a label that can be clicked.

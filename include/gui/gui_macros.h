@@ -1,7 +1,7 @@
 
-#include "font.h"
-#include "pixel_565.h"
-#include "pixel_image.h"
+#include "framebuffer/font.h"
+#include "framebuffer/pixel_565.h"
+#include "framebuffer/pixel_image.h"
 
 //////////////////////////////////////////////////////////////////////////////
 // GuiNumber Helpers
