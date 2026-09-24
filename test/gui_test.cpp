@@ -46,7 +46,7 @@ static uint8_t work[work_bytes];
 
 static Ws35 fb(fb_spi_inst, fb_spi_miso_gpio, fb_spi_mosi_gpio, fb_spi_clk_gpio,
                fb_spi_cs_gpio, spi_baud_request, fb_cd_gpio, fb_rst_gpio,
-               fb_led_gpio, 480, 320, work, work_bytes);
+               fb_led_gpio, 320, 480, work, work_bytes);
 
 static I2cDev i2c_dev(ts_i2c_inst, ts_i2c_scl_gpio, ts_i2c_sda_gpio,
                       ts_i2c_baud_request);
