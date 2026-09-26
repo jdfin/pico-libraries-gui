@@ -17,7 +17,7 @@
 #include "framebuffer/pixel_565.h"
 #include "framebuffer/pixel_image.h"
 #include "framebuffer/roboto.h"
-#include "framebuffer/tft_spi_if.h"
+#include "framebuffer/tft_spi4_if.h"
 #include "framebuffer/ws35.h"
 // touchscreen
 #include "touchscreen/gt911.h"
@@ -45,9 +45,9 @@ static const uint8_t ts_i2c_addr = 0x14; // 0x14 or 0x5d
 static const int work_bytes = 128;
 static uint8_t work[work_bytes];
 
-static TftSpiIf fb_io(fb_spi_inst, fb_spi_miso_gpio, fb_spi_mosi_gpio,
-                      fb_spi_clk_gpio, fb_spi_cs_gpio, spi_baud_request,
-                      fb_cd_gpio);
+static TftSpi4If fb_io(fb_spi_inst, fb_spi_miso_gpio, fb_spi_mosi_gpio,
+                       fb_spi_clk_gpio, fb_spi_cs_gpio, spi_baud_request,
+                       fb_cd_gpio);
 
 static Ws35 fb(fb_io, fb_rst_gpio, fb_led_gpio, 320, 480, work, work_bytes);
 
