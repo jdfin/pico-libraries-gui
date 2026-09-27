@@ -118,13 +118,15 @@ int main()
 
     // initialize framebuffer
 
+    // spi_freq() isn't valid until fb.init() has run - that's what actually
+    // calls down to TftSpi4If::init(), which computes it.
+    fb.init();
+    printf("Framebuffer ready\n");
+
     spi_baud_actual = fb.spi_freq();
     spi_rate_max = spi_baud_actual / 8;
     printf("spi: requested %lu Hz, got %lu Hz (max %lu bytes/sec)\n", //
            spi_baud_request, spi_baud_actual, spi_rate_max);
-
-    fb.init();
-    printf("Framebuffer ready\n");
 
     // Turning on the backlight here shows whatever happens to be in RAM
     // (previously displayed or random junk), so we turn it on after filling
